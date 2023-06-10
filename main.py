@@ -5,7 +5,7 @@ from decouple import config
 import os
 
 app = Flask(__name__)
-app.config['MONGO_URI']=os.getenv('DATABASE_URL')
+app.config['MONGO_URI']=config('DATABASE_URL')
 mongo = PyMongo(app)
 CORS(app)
 
@@ -66,4 +66,4 @@ def updateUser(id):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=os.getenv("PORT", default=5000))
+    app.run(debug=True, port=5000)
