@@ -5,7 +5,7 @@ from decouple import config
 import os
 
 app = Flask(__name__)
-
+app.config['MONGO_URI']=os.getenv('DATABASE_URL')
 mongo = PyMongo(app)
 CORS(app)
 
